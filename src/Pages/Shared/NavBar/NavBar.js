@@ -1,37 +1,37 @@
 import React from 'react';
 import { Button, Container, Nav, Navbar } from 'react-bootstrap';
-import logo from '../../../logos/we-volunteer.png'
+import { NavLink } from 'react-router-dom';
+import logo from '../../../logos/we-volunteer.png';
+import './NavBar.css';
 const NavBar = () => {
     return (
         <div>
             <Navbar collapseOnSelect expand="lg" variant="dark">
-                <Container>
-                    <Navbar.Brand href="#home">
+                <Container className='nav-itmes'>
+                    <Navbar.Brand>
                         <img className='w-50' src={logo} alt="" />
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link className='text-dark fw-bold' href="#features">Features</Nav.Link>
-                            <Nav.Link className='text-dark fw-bold' href="#pricing">Pricing</Nav.Link>
                         </Nav>
                         <Nav>
-                            <Nav.Link className='text-dark fw-bold' href="#deets">Home</Nav.Link>
-                            <Nav.Link className='text-dark fw-bold' href="#memes">
+                            <NavLink className='text-dark fw-bold' to="/home">Home</NavLink>
+                            <NavLink className='text-dark fw-bold' to="/donation">
                                 Donation
-                            </Nav.Link>
-                            <Nav.Link className='text-dark fw-bold' href="#memes">
+                            </NavLink>
+                            <NavLink className='text-dark fw-bold' to="/events">
                                 Events
-                            </Nav.Link>
-                            <Nav.Link className='text-dark fw-bold' href="#memes">
+                            </NavLink>
+                            <NavLink className='text-dark fw-bold' to="/blog">
                                 Blog
-                            </Nav.Link>
-                            <Nav.Link className='text-dark fw-bold' href="#memes">
+                            </NavLink>
+                            <NavLink className='text-dark fw-bold' to="/register">
                                 <Button>Register</Button>
-                            </Nav.Link>
-                            <Nav.Link className='text-dark fw-bold' href="#memes">
+                            </NavLink>
+                            <NavLink className='text-dark fw-bold' to="/admin">
                                 <Button>Admin</Button>
-                            </Nav.Link>
+                            </NavLink>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

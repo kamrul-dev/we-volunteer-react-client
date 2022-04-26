@@ -1,0 +1,10 @@
+.nav-itmes{
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav-itmes a{
+    text-decoration: none;
+    margin-right: 30px;
+}
