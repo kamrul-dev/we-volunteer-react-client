@@ -1,11 +1,17 @@
 import React from 'react';
+import NavBar from '../../Shared/NavBar/NavBar';
+import './Banner.css'
 
-const banner = () => {
+const Banner = () => {
     return (
-        <div>
-            <h2>Banner</h2>
+        <div className='hero-banner'>
+            <NavBar></NavBar>
+            <div className='text-center'>
+                <h2 className=''>WE GROW PEOPLE FOR HELPING</h2>
+                <input className='w-50' type="text" name="" id="" placeholder='search' />
+            </div>
         </div>
     );
 };
 
-export default banner;
+export default Banner;

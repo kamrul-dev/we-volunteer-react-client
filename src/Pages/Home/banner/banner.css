@@ -1,0 +1,8 @@
+.hero-banner {
+    background-image: url('../../../images/hero-banner.png');
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 500px;
+    background-size: cover;
+    box-shadow: inset 0 0 0 2000px rgba(255, 255, 255, 0.8);
+}
