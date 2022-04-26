@@ -23,11 +23,11 @@ const NavBar = () => {
                             <NavLink className='text-dark fw-bold' to="/events">
                                 Events
                             </NavLink>
-                            <NavLink className='text-dark fw-bold' to="/blog">
+                            <NavLink className='text-dark fw-bold' to="/blogs">
                                 Blog
                             </NavLink>
                             <NavLink className='text-dark fw-bold' to="/register">
-                                <Button>Register</Button>
+                                <Button>Register as Voluteer</Button>
                             </NavLink>
                             <NavLink className='text-dark fw-bold' to="/admin">
                                 <Button>Admin</Button>
