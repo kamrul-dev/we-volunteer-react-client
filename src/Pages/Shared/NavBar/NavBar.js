@@ -26,6 +26,9 @@ const NavBar = () => {
                             <NavLink className='text-dark fw-bold' to="/blogs">
                                 Blog
                             </NavLink>
+                            <NavLink className='text-dark fw-bold' to="/login">
+                                Login
+                            </NavLink>
                             <NavLink className='text-dark fw-bold' to="/register">
                                 <Button>Register as Voluteer</Button>
                             </NavLink>
