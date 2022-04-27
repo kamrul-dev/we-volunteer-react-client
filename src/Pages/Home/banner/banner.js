@@ -8,7 +8,7 @@ const Banner = () => {
             <NavBar></NavBar>
             <div className='d-flex flex-column align-items-center'>
                 <h2 className=''>WE GROW PEOPLE FOR HELPING</h2>
-                <div>
+                <div className='search-field'>
                     <input className='' type="text" name="" id="" placeholder='search' />
                 </div>
             </div>
