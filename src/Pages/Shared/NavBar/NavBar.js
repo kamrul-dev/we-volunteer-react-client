@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Container, Nav, Navbar } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import logo from '../../../logos/we-volunteer.png';
 import './NavBar.css';
 const NavBar = () => {
@@ -9,7 +9,7 @@ const NavBar = () => {
             <Navbar collapseOnSelect expand="lg" variant="dark">
                 <Container className='nav-itmes'>
                     <Navbar.Brand>
-                        <img className='w-50' src={logo} alt="" />
+                        <Link to='/'><img className='w-50' src={logo} alt="" /></Link>
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
