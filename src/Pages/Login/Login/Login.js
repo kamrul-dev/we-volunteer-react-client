@@ -41,7 +41,7 @@ const login = () => {
                             <label htmlFor="password" className="chekbox-label">Remember Me</label>
                         </div>
                         <div>
-                            <Link to="/">Forget password</Link>
+                            <Link className='text-decoration-none' to="/">Forget password</Link>
                         </div>
                     </div>
                     <div>
@@ -49,11 +49,11 @@ const login = () => {
                     </div>
                 </form>
                 <div className="display-space-between">
-                    <Link to="/">privacy policy</Link>
-                    <Link to="/">Terms & condition</Link>
+                    <Link className='text-decoration-none' to="/">privacy policy</Link>
+                    <Link className='text-decoration-none' to="/">Terms & condition</Link>
                 </div>
                 <div>
-                    <Link to="/register">Create an Account</Link>
+                    <Link className='text-decoration-none' to="/register">Create an Account</Link>
                 </div>
             </div>
         </div>
