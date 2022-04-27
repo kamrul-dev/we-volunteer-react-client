@@ -66,6 +66,7 @@ input[type="password"] {
     color: var(--secondary-color);
     outline: none;
     border: 1px solid transparent;
+    margin-bottom: 10px;
 }
 
 @media only screen and (max-width: 300px) {

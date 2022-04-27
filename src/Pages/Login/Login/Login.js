@@ -28,12 +28,10 @@ const login = () => {
                 </div>
                 <form>
                     <div className="form-input">
-                        <label htmlFor="email" className="label">Email</label>
-                        <input type="email" name='email' />
+                        <input type="email" name='email' placeholder='Email' required/>
                     </div>
                     <div className="form-input">
-                        <label htmlFor="password" className="label">Password</label>
-                        <input type="password" name='password' />
+                        <input type="password" name='password' placeholder='Password' required/>
                     </div>
                     <div className="display-space-between">
                         <div>
