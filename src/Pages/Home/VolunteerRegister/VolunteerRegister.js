@@ -24,7 +24,13 @@ const VolunteerRegister = () => {
                             <input type="email" name='email' placeholder='Email' required />
                         </div>
                         <div className="form-input">
-                            <input type="password" name='password' placeholder='Password' required />
+                            <input type="text" name='date' placeholder='Date'/>
+                        </div>
+                        <div className="form-input">
+                            <input type="text" name='description' placeholder='Description' />
+                        </div>
+                        <div className="form-input">
+                            <input type="text" name='role' placeholder='Role' />
                         </div>
                         <div>
                             <button type="submit">Register</button>
