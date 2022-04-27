@@ -5,6 +5,7 @@ import Blogs from './Pages/Home/Blogs/Blogs';
 import Donation from './Pages/Home/Donation/Donation';
 import Events from './Pages/Home/Events/Events';
 import Home from './Pages/Home/Home/Home';
+import VolunteerRegister from './Pages/Home/VolunteerRegister/VolunteerRegister';
 import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
 
@@ -19,6 +20,7 @@ function App() {
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
+        <Route path='/volunteerregister' element={<VolunteerRegister></VolunteerRegister>}></Route>
       </Routes>
     </div>
   );

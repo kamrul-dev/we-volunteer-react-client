@@ -29,7 +29,7 @@ const NavBar = () => {
                             <NavLink className='text-dark fw-bold' to="/login">
                                 Login
                             </NavLink>
-                            <NavLink className='text-dark fw-bold' to="/register">
+                            <NavLink className='text-dark fw-bold' to="/volunteerregister">
                                 <Button>Register as Voluteer</Button>
                             </NavLink>
                             <NavLink className='text-dark fw-bold' to="/admin">

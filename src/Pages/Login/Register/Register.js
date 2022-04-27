@@ -4,6 +4,7 @@ import { FcGoogle } from 'react-icons/fc';
 import { BsFacebook } from 'react-icons/bs';
 import { AiFillTwitterCircle } from 'react-icons/ai';
 import NavBar from '../../Shared/NavBar/NavBar';
+import logo from '../../../logos/we-volunteer.png'
 
 const Register = () => {
     return (
@@ -11,7 +12,8 @@ const Register = () => {
             <NavBar></NavBar>
             <div className='login-body'>
                 <div className="container-full">
-                    <div className="item-container">
+                    <div className="item-container d-flex flex-column">
+                    <img className='w-25' src={logo} alt="" />
                         <h2 className="log-in">Registration</h2>
                     </div>
                     <div className="item-container">
