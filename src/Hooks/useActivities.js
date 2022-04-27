@@ -4,7 +4,7 @@ const useActivities = () => {
     const [activities, setActivities] = useState([]);
 
     useEffect(() => {
-        const url = ``;
+        const url = `http://localhost:5000/activities`;
         fetch(url)
             .then(res => res.json())
             .then(data => setActivities(data))
