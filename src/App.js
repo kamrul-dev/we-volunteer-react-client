@@ -21,7 +21,7 @@ function App() {
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
-        <Route path='/volunteerregister' element={<VolunteerRegister></VolunteerRegister>}></Route>
+        <Route path='/volunteerregister/:actId' element={<VolunteerRegister></VolunteerRegister>}></Route>
       </Routes>
     <ToastContainer></ToastContainer>
     </div>
