@@ -3,11 +3,40 @@ import './Login.css';
 import { FcGoogle } from 'react-icons/fc';
 import { BsFacebook } from 'react-icons/bs';
 import { AiFillTwitterCircle } from 'react-icons/ai';
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 import NavBar from '../../Shared/NavBar/NavBar';
 import logo from '../../../logos/we-volunteer.png';
+import auth from '../../../firebase.init';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import Loading from '../../Shared/Loading/Loading';
+import { toast } from 'react-toastify';
 
-const login = () => {
+const Login = () => {
+    const [
+        signInWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useSignInWithEmailAndPassword(auth);
+    const navigate = useNavigate();
+
+    if (loading) {
+        return <Loading></Loading>
+    }
+    let errorElement;
+    if (error) {
+        errorElement = <p className='text-danger'> *Error: {error?.message}</p>
+    }
+    if (user) {
+        navigate('/home');
+    }
+
+    const handleLogin = async (event) => {
+        event.preventDefault();
+        const email = event.target.email.value;
+        const password = event.target.password.value;
+        await signInWithEmailAndPassword(email, password);
+    }
     return (
         <div>
             <NavBar></NavBar>
@@ -31,7 +60,7 @@ const login = () => {
                     <div className="item-container">
                         <p>or login using email</p>
                     </div>
-                    <form>
+                    <form onSubmit={handleLogin}>
                         <div className="form-input">
                             <input type="email" name='email' placeholder='Email' required />
                         </div>
@@ -51,6 +80,7 @@ const login = () => {
                             <button type="submit">Log in</button>
                         </div>
                     </form>
+                    {errorElement}
                     <div className="display-space-between">
                         <Link className='text-decoration-none' to="/">privacy policy</Link>
                         <Link className='text-decoration-none' to="/">Terms & condition</Link>
@@ -64,4 +94,4 @@ const login = () => {
     );
 };
 
-export default login;
+export default Login;
