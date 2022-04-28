@@ -8,7 +8,6 @@ import logo from '../../../logos/we-volunteer.png'
 import auth from '../../../firebase.init';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import Loading from '../../Shared/Loading/Loading';
-import { toast } from 'react-toastify';
 
 
 const Register = () => {
@@ -17,15 +16,17 @@ const Register = () => {
         user,
         loading,
         error,
-    ] = useCreateUserWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
     const navigate = useNavigate();
 
 
     if (loading) {
         return <Loading></Loading>
     }
+
+    let errorElement;
     if (error) {
-        return toast('Something went wrong!!')
+        errorElement = <p className='text-danger'> *Error: {error?.message}</p>
     }
 
     if (user) {
@@ -77,6 +78,7 @@ const Register = () => {
                             <button type="submit">Register</button>
                         </div>
                     </form>
+                    {errorElement}
                     <div className="display-space-between">
                         <Link className='text-decoration-none' to="/">privacy policy</Link>
                         <Link className='text-decoration-none' to="/">Terms & condition</Link>
