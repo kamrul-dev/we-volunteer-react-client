@@ -18,7 +18,7 @@ const NavBar = () => {
     const handleSignOut = () => {
         signOut(auth);
         navigate('/');
-        
+
     }
     return (
         <div>
@@ -46,9 +46,6 @@ const NavBar = () => {
                                 user ? <div className='d-flex align-items-center'><Button onClick={() => handleSignOut(auth)} className="btn btn-warning">SignOut</Button> </div> : <NavLink className='text-dark fw-bold' to="/login">
                                     Login
                                 </NavLink>
-                            }
-                            {
-                                user?.displayName
                             }
                             <NavLink className='text-dark fw-bold' to="/volunteerregister">
                                 <Button>Register as Voluteer</Button>
