@@ -1,17 +1,19 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import './Login.css';
 import { FcGoogle } from 'react-icons/fc';
 import { BsFacebook } from 'react-icons/bs';
 import { AiFillTwitterCircle } from 'react-icons/ai';
-import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import NavBar from '../../Shared/NavBar/NavBar';
 import logo from '../../../logos/we-volunteer.png';
 import auth from '../../../firebase.init';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import Loading from '../../Shared/Loading/Loading';
+import { toast } from 'react-toastify';
 
 
 const Login = () => {
+    const emailRef = useRef('')
     const [
         signInWithEmailAndPassword,
         user,
@@ -19,8 +21,11 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
     const navigate = useNavigate();
+    const [sendPasswordResetEmail, sending, errorReset] = useSendPasswordResetEmail(
+        auth
+    );
 
-    if (loading) {
+    if (loading || sending) {
         return <Loading></Loading>
     }
     let errorElement;
@@ -37,6 +42,19 @@ const Login = () => {
         const password = event.target.password.value;
         await signInWithEmailAndPassword(email, password);
     }
+
+    const handleResetPassword = async () => {
+        const email = emailRef.current.value;
+        await sendPasswordResetEmail(email);
+        if (email) {
+            toast('Sent Email')
+        }
+        else {
+            toast('Please Enter Email Address');
+        }
+
+    }
+
     return (
         <div>
             <NavBar></NavBar>
@@ -62,7 +80,7 @@ const Login = () => {
                     </div>
                     <form onSubmit={handleLogin}>
                         <div className="form-input">
-                            <input type="email" name='email' placeholder='Email' required />
+                            <input ref={emailRef} type="email" name='email' placeholder='Email' required />
                         </div>
                         <div className="form-input">
                             <input type="password" name='password' placeholder='Password' required />
@@ -73,7 +91,7 @@ const Login = () => {
                                 <label htmlFor="password" className="chekbox-label">Remember Me</label>
                             </div>
                             <div>
-                                <Link className='text-decoration-none' to="/">Forget password</Link>
+                                <p onClick={handleResetPassword} className='btn btn-link text-primary pe-atuo text-decoration-none'>Forget password?</p>
                             </div>
                         </div>
                         <div>
