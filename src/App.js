@@ -1,4 +1,5 @@
 
+import { ToastContainer } from 'react-bootstrap';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Blogs from './Pages/Home/Blogs/Blogs';
@@ -22,6 +23,7 @@ function App() {
         <Route path='/register' element={<Register></Register>}></Route>
         <Route path='/volunteerregister' element={<VolunteerRegister></VolunteerRegister>}></Route>
       </Routes>
+      <ToastContainer></ToastContainer>
     </div>
   );
 }
